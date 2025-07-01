@@ -16,7 +16,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: ${{ matrix.python-version }}
+        python-version: ${{ matrix.python-versions }}
 
     - name: Install dependencies
       run: |
@@ -25,7 +25,6 @@ jobs:
 
     - name: Run tests
       run: |
-      cd src
-        python -m pytest addition.py
         cd src
         python -m pytest addition.py
+        
